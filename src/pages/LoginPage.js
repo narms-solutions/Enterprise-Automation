@@ -1,5 +1,6 @@
 import Commonactions from "./Commonactions.js";
-import data from "./data.json"
+import dotenv from 'dotenv';
+dotenv.config({path:'./src/config/.env'});
 
 
 export default class LoginPage{
@@ -13,7 +14,7 @@ export default class LoginPage{
 
     constructor(page){
         this.page=page;
-        this.data=data;
+       
         this.actions=new Commonactions(page);
     }
 
@@ -21,9 +22,9 @@ export default class LoginPage{
         await this.page.goto("/");
         
      }
-     async fillCredentials(){
-       await this.actions.getTextBoxField(this.inputFiledTypeSelector, this.userNameInputSelector, data.userName);
-       await this.actions.getTextBoxField(this.inputFiledTypeSelector, this.passwordInputSelector, data.Password );
+     async fillCredentials( ){
+       await this.actions.getTextBoxField(this.inputFiledTypeSelector, this.userNameInputSelector, process.env.APP_USERNAME);
+       await this.actions.getTextBoxField(this.inputFiledTypeSelector, this.passwordInputSelector, process.env.APP_PASSWORD);
        const homePage=await this.actions.clickLoginButton(this.loginButtonSelector);
         //const homepage=await this.actions.pominnMigSenareLink(this.registermigTypekSelector, this.registerMigLinkSelector);
       await homePage.expectStartPageToBeVisible();

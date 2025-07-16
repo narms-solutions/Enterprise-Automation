@@ -15,6 +15,7 @@ test.afterEach('Close the browser',async({page})=>{
 test('Navigate to Login Page', async()=>{
 
     await pm.loginPage.navigateToLoginPage();
+    console.log(process.env.APP_USERNAME)
     await pm.loginPage.fillCredentials();
 })
     

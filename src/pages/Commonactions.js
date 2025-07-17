@@ -11,7 +11,7 @@ export default class Commonactions{
 
     async getTextBoxField(role,Name, text){
       await this.page.waitForLoadState('domcontentloaded');
-       //await this.page.waitForLoadState('domcontentloaded');
+      
       const inputField=  await this.page.getByRole(role, {name:Name});
       await inputField.fill(text);
     }
@@ -31,7 +31,7 @@ export default class Commonactions{
     }
 
     async getStartPageTitle(role, Name){
-      
+      await this.page.waitForLoadState('domcontentloaded');
         return this.page.getByRole(role, {name:Name});
        
     }

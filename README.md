@@ -15,4 +15,14 @@ cp src/config/.env.example src/config/.env
 Important: Make sure NOT to commit the .env file to the Git repository.
 The .env file is already included in .gitignore to prevent accidental commits..
 
+#This project supports multiple environments
+```bash
+cp src/config/.env.example src/config/.env.test
+
+edit the your own credentials 
+
+you also create .env.stage, .env.preprod ......
+
+
+
 

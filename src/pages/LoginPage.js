@@ -1,6 +1,6 @@
 import Commonactions from "./Commonactions.js";
-import dotenv from 'dotenv';
-dotenv.config({path:'./src/config/.env'});
+// import dotenv from 'dotenv';
+// dotenv.config({path:'./src/config/.env'});
 
 
 export default class LoginPage{

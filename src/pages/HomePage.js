@@ -12,8 +12,10 @@ export default class HomePage{
     }
 
     async expectStartPageToBeVisible(){
+        await this.page.screenshot({ path: 'debug-visible.png' });
       const startPageTitle=  await this.actions.getStartPageTitle(this.startPageTypeSelector, this.startPageSelector);
       await expect(startPageTitle).toBeVisible({timeout:15000});
+      await this.page.screenshot({ path: 'debug-visible.png' });
     }
 
     async printStatPageTitle(){

@@ -19,6 +19,7 @@ export default class HomePage{
     async printStatPageTitle(){
         const title= await this.actions.getTitle(this.startMentTitleSelector);
         console.log(`The title of the home page: ${title}`);
+        await this.page.screenshot({ path: 'debug-visible.png' });
 
     }
 }
